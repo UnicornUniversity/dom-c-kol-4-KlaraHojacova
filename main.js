@@ -98,9 +98,9 @@ export function getEmployeeStatistics(employeeList) {
         workload30: w30,
         workload40: w40,
         averageAge: Math.round((ageSum / employeeList.length) * 10) / 10,
-        minAge: Math.round(ages[0]),
-        maxAge: Math.round(ages[ages.length - 1]),
-        medianAge: Math.round(median(ages)),
+        minAge: Math.floor(ages[0]),
+        maxAge: Math.floor(ages[ages.length - 1]),
+        medianAge: Math.floor(median(ages)),
         medianWorkload: median(allWorkloads),
         averageWomenWorkload: femaleCount > 0 ? Math.round((femaleSum / femaleCount) * 10) / 10 : 0,
         sortedByWorkload: [...employeeList].sort((a, b) => a.workload - b.workload)
