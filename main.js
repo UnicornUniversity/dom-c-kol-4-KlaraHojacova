@@ -3,7 +3,7 @@
  * @param {object} age age object
  * @returns {string} iso string
  */
-function getBirthdate(age) {
+export function getBirthdate(age) {
     const msInYear = 31557600000;
     const now = new Date().getTime();
     const earliest = now - (age.max * msInYear);
@@ -11,8 +11,6 @@ function getBirthdate(age) {
     const randomTime = earliest + Math.random() * (latest - earliest);
 
     let birthdate = new Date(randomTime);
-
-birthdate.setUTCHours(0, 0, 0, 0);
 
     return birthdate.toISOString();
 }
@@ -30,7 +28,7 @@ birthdate.setUTCHours(0, 0, 0, 0);
 }
 
 //generateEmployeeData
-function generateEmployeeData(dtoIn) {
+export function generateEmployeeData(dtoIn) {
 
     let namesPool = [
         { name: "Jan", surname: "Holý", gender: "male", workload: 40 },
@@ -62,7 +60,7 @@ let list = [];
 
 //statistics calculation
 
-function getEmployeeStatistics(employeeList) {
+export function getEmployeeStatistics(employeeList) {
     let ages = [];
     let w10 = 0, w20 = 0, w30 = 0, w40 = 0;
     let femaleSum = 0, femaleCount = 0;
